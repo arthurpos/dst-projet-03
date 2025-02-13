@@ -1,0 +1,7 @@
+---
+# defaults file for icwebapp_role
+ic_name: ic-webapp
+ic_image: arthur170478/ic-webapp:1.0
+ic_host_port: 8080
+odoo_url: http://100.27.230.159:8069
+pg_url: http://100.27.230.159:80

@@ -1,0 +1,9 @@
+services:
+  {{ pg_name }}:
+    container_name: {{ pg_name }}
+    image: {{ pg_image }}
+    environment:
+      - PGADMIN_DEFAULT_EMAIL={{ pg_def_email }}
+      - PGADMIN_DEFAULT_PASSWORD={{ pg_def_password }}
+    ports:
+      - {{ pg_host_port }}:80

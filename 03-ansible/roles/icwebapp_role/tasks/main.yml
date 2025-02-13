@@ -1,0 +1,20 @@
+---
+# tasks file for icwebapp_role
+- name: generate compose file icwebapp
+  template:
+    src: "icwebapp-compose.yaml.j2"
+    dest: "/home/{{ ansible_user }}/icwebapp-compose.yaml"
+    mode: "0555"
+  tags: start
+
+- name: start stack icwebapp
+  command: "docker compose -f /home/{{ ansible_user }}/icwebapp-compose.yaml up -d"
+  tags: start
+
+- name: Stop stack icwebapp
+  command: "docker compose -f /home/{{ ansible_user }}/icwebapp-compose.yaml down -v --remove-orphans"
+  tags: delete
+
+- name: Delete icwebapp compose file
+  command: "rm -f /home/{{ ansible_user }}/icwebapp-compose.yaml"
+  tags: delete

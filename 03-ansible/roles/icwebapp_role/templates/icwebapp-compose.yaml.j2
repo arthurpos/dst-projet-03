@@ -1,0 +1,9 @@
+services:
+  icwebapp:
+      container_name: {{ ic_name }}
+      image: {{ ic_image }}
+      environment:
+        - ODOO_URL= {{ odoo_url }}
+        - PGADMIN_URL= {{ pg_url }}
+      ports:
+        - {{ ic_host_port }}:8080

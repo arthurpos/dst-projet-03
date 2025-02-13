@@ -1,0 +1,5 @@
+---
+# tasks file for k3s_role/
+- name: install k3s
+  script: "k3s.sh"
+  tags: install

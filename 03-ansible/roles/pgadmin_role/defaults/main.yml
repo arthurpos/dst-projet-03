@@ -1,0 +1,7 @@
+---
+# defaults file for pgadmin_role
+pg_name: pgadmin
+pg_image: dpage/pgadmin4
+pg_def_email: user@domain.com
+pg_def_password: pgadmin
+pg_host_port: 80

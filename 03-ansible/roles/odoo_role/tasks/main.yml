@@ -1,0 +1,20 @@
+---
+# tasks file for odoo_role
+- name: generate compose file odoo
+  template:
+    src: "odoo-compose.yaml.j2"
+    dest: "/home/{{ ansible_user }}/odoo-compose.yaml"
+    mode: "0555"
+  tags: start
+
+- name: start stack odoo
+  command: "docker compose -f /home/{{ ansible_user }}/odoo-compose.yaml up -d --remove-orphans"
+  tags: start
+
+- name: Stop stack odoo
+  command: "docker compose -f /home/{{ ansible_user }}/odoo-compose.yaml down -v"
+  tags: delete
+
+- name: Delete odoo compose file
+  command: "rm -f /home/{{ ansible_user }}/odoo-compose.yaml"
+  tags: delete
