@@ -19,14 +19,16 @@ spec:
     spec:
       volumes:
       - name: config
-        persistentVolumeClaim:
-          claimName: odoo-pvc
+        hostPath:
+          type: DirectoryOrCreate
+          path: /data-odoo/config
       - name: web-data
         persistentVolumeClaim:
           claimName: odoo-pvc
       - name: addons 
-        persistentVolumeClaim:
-          claimName: odoo-pvc
+        hostPath:
+          type: DirectoryOrCreate
+          path: /data-odoo/addons
       containers:
       - image: odoo:17
         name: odoo

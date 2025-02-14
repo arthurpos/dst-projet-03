@@ -2,4 +2,5 @@
 .terraform.lock.hcl
 terraform.tfstate.backup
 terraform.tfstate
-keypair/*.pem
+*.pem
+*.txt

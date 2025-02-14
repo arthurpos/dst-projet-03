@@ -13,7 +13,7 @@ spec:
     targetPort: 8080
     nodePort: 30080
   selector:
-    app: icwebapp-service
+    app: icwebapp-deployment
   type: NodePort
 status:
   loadBalancer: {}
