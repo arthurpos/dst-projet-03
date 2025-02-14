@@ -8,11 +8,11 @@
   tags: start
 
 - name: start stack odoo
-  command: "docker compose -f /home/{{ ansible_user }}/odoo-compose.yaml up -d --remove-orphans"
+  command: "docker compose -f /home/{{ ansible_user }}/odoo-compose.yaml up -d"
   tags: start
 
 - name: Stop stack odoo
-  command: "docker compose -f /home/{{ ansible_user }}/odoo-compose.yaml down -v"
+  command: "docker compose -f /home/{{ ansible_user }}/odoo-compose.yaml down -v --remove-orphans"
   tags: delete
 
 - name: Delete odoo compose file

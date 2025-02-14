@@ -1,9 +1,9 @@
 services:
-  icwebapp:
+  {{ ic_name }}:
       container_name: {{ ic_name }}
       image: {{ ic_image }}
       environment:
-        - ODOO_URL= {{ odoo_url }}
-        - PGADMIN_URL= {{ pg_url }}
+        - ODOO_URL= http://{{ ansible_host }}:{{ odoo_host_port }}
+        - PGADMIN_URL= http://{{ ansible_host }}:{{ pg_host_port }}
       ports:
         - {{ ic_host_port }}:8080
